@@ -391,7 +391,7 @@
 
 @media (max-width: 768px) {
     .main_wrap {
-        height: 100vh;
+        min-height: 0;
     }
 
     .main_visual .mbg {
