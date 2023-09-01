@@ -7,7 +7,21 @@ $(function () {
         } else {
             $('.header').removeClass('on')
         }
-    })
+    });
+
+
+    $('.gnb ul>li:last-child').on('click', function (e) {
+        e.preventDefault();
+        $(this).addClass('on');
+        $('.menu_all').addClass('on');
+    });
+
+    $('.menu_all .btn_m').on('click', function (e) {
+        e.preventDefault();
+        $(this).toggleClass('on')
+        $('.menu_all').toggleClass('on')
+    });
+
 
     $('.main_slide').slick({
         autoplay: true,
@@ -85,6 +99,7 @@ $(function () {
         $(this).toggleClass('on')
         $('.gnb').toggleClass('on')
     });
+
 
 
 })
