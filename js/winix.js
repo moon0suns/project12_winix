@@ -1,8 +1,10 @@
 $(function () {
     $(window).on('scroll', function () {
         let sct = $(window).scrollTop();
-        console.log(sct)
-        if (sct > 0) {
+        console.log(sct);
+        let st = $('.header').hasClass('on');
+        console.log(st);
+        if (sct > 0 || !st) {
             $('.header').addClass('on')
         } else {
             $('.header').removeClass('on')
@@ -81,25 +83,20 @@ $(function () {
 
     });
 
-    // 스크롤 업
     $('.to_top').on('click', function () {
         $('html, body').animate({ scrollTop: 0 }, 600)
     });
 
-    //   스크롤없애는거
     $(window).on('scroll', function () {
         let sct = $(window).scrollTop();
-        // 첫번째방법 sct > 1000 ? $('.to_top').fadeIn(1000) : $('.to_top').fadeOut();
         sct > 2000 ? $('.to_top').addClass('on') : $('.to_top').removeClass('on');
     })
 
-
-
     $('.mopen').on('click', function () {
+        let st = $('.header').hasClass('on');
         $(this).toggleClass('on')
-        $('.gnb').toggleClass('on')
+        $('.gnb').toggleClass('on');
+        $('.header').toggleClass('ox');
     });
-
-
 
 })
