@@ -217,23 +217,78 @@
         display: none;
     }
 
+    .header.on .mopen::before,
+    .header.on .mopen::after {
+        background: #666;
+    }
+
+    .header.on .mopen button::before,
+    .header.on .mopen button::after {
+        background: #666;
+    }
+
     .mopen {
         display: block;
+
         position: fixed;
-        top: 25px;
-        right: 15px;
-        z-index: 999;
-
-        font-size: 28px;
-        color: #ddd;
-
-        user-select: none;
+        inset: 25px 15px auto auto;
+        z-index: 1000;
+        width: 30px;
+        height: 30px;
         cursor: pointer;
     }
 
-    .header.on .mopen {
-        color: #444;
+    .mopen::before,
+    .mopen::after {
+        content: "";
+        position: absolute;
+        inset: 14px 5px auto 5px;
+        height: 2px;
+        background: #ddd;
     }
+
+    .mopen.on::before {
+        background: #666;
+        transform: rotate(45deg);
+        transition: 0.5s 0.2s;
+    }
+
+    .mopen.on::after {
+        background: #666;
+        transform: rotate(-225deg);
+        transition: 0.5s 0.6s;
+    }
+
+    .mopen button {
+        border: none;
+        outline: none;
+        background: transparent;
+    }
+
+    .mopen button::before,
+    .mopen button::after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        background: #ddd;
+    }
+
+    .mopen button::before {
+        inset: 7px 5px auto 5px;
+    }
+
+    .mopen button::after {
+        inset: auto 5px 7px 5px;
+    }
+
+    .mopen.on button::before {
+        display: none;
+    }
+
+    .mopen.on button::after {
+        display: none;
+    }
+
 
 }
 
